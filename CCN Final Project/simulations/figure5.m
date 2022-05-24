@@ -68,11 +68,11 @@ d1 = 70;
 %
 % Copmute distance between the source and destination
 %
-d_SD = sqrt(d1^2+dv^2);
+d_SD = sqrt(d1^2 + dv^2);
 %
 % Compute distance between the IRS/relay and destination
 %
-d_RD = sqrt((d1-d_SR)^2+dv^2);
+d_RD = sqrt((d1 - d_SR)^2 + dv^2);
 %
 % Compute the channel gains using the 3GPP models and antenna gains
 %
@@ -92,8 +92,8 @@ for ind = 1:length(Rbar)
     %
     % Compute required SINR values
     %
-    SINR = 2^(Rbar(ind)) - 1;        % SISO and IRS
-    SINR_DF = 2^(2 * Rbar(ind)) - 1; % DF relaying
+    SINR = 2^(Rbar(ind)) - 1;      % SISO and IRS
+    SINR_DF = 2^(2*Rbar(ind)) - 1; % DF relaying
     %
     % Compute the transmit power in the SISO case, using Eq.(17)
     %
@@ -128,7 +128,7 @@ for ind = 1:length(Rbar)
     % Compute the energy efficiency in the IRS case
     % (the factor 1000 is used to convert mW to W)
     %
-    EE_IRS(ind) = 1000*B*Rbar(ind)/(P_IRS/nu + Ps + Pd + Nopt(ind)*Pe);
+    EE_IRS(ind) = 1000 * B * Rbar(ind) / (P_IRS/nu + Ps + Pd + Nopt(ind)*Pe);
 end
 %
 % Plot simulation results
