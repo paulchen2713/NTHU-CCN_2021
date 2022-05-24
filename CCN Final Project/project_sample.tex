@@ -1,0 +1,150 @@
+\documentclass[11pt,a4paper]{scrartcl}
+
+\usepackage[T1]{fontenc} % font setting
+\usepackage{url} % include web address
+\usepackage{cite} % citation
+\usepackage{graphicx,subfigure} % include pictures
+\usepackage{amssymb,amsmath,amsthm} % math packages
+\usepackage{setspace} % space adjustment
+\usepackage{color}
+\usepackage{enumitem}% govern the space between items
+%-----------------------------------------------------------
+%Margin setup
+\usepackage
+[
+        %a4paper,% other options: a3paper, a5paper, etc
+        left=1.2cm,
+        right=1.2cm,
+        top=2cm,
+        bottom=2cm,
+] {geometry}
+%-----------------------------------------------------------
+%-----------------------------------------------------------
+% Customized setting
+%\setstretch{1.2}
+%
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+%-----------------------------------------------------------
+
+%%% Headers and footers
+\usepackage{fancyhdr}
+\pagestyle{fancyplain}
+\fancyhead{}                           % No page header
+\fancyfoot[L]{\small COM, NTHU}        % You may remove/edit this line
+\fancyfoot[C]{}                        % Empty
+\fancyfoot[R]{\thepage}                % Pagenumbering
+\renewcommand{\headrulewidth}{0pt}     % Remove header underlines
+\renewcommand{\footrulewidth}{0pt}     % Remove footer underlines
+\setlength{\headheight}{13.6pt}
+%-----------------------------------------------------------
+
+%%% Custom sectioning (sectsty package)
+\usepackage{sectsty}                                % Custom sectioning (see below)
+\allsectionsfont{%                                  % Change font of al section commands
+    \usefont{OT1}{bch}{b}{n}%                   % bch-b-n: CharterBT-Bold font
+%   \hspace{15pt}%                                  % Uncomment for indentation
+}
+
+\sectionfont{%                                      % Change font of \section command
+    \usefont{OT1}{bch}{b}{n}%                   % bch-b-n: CharterBT-Bold font
+    \sectionrule{0pt}{0pt}{-5pt}{0.8pt}%    % Horizontal rule below section
+    }
+
+
+
+%%% Maketitle metadata
+\newcommand{\horrule}[1]{\rule{\linewidth}{#1}}     % Horizontal rule
+
+\begin{document}
+\title{
+        %\vspace{-1in}
+        \usefont{OT1}{bch}{b}{n}
+        \normalfont \normalsize \textsc{Spring 2021 -- Cooperative Communications and Networking} \\ [25pt]
+        \horrule{0.5pt} \\[0.4cm]
+        \huge This is the report title \\
+        \horrule{2pt} \\[0.5cm]
+}
+
+\author{
+        \normalfont                                 \normalsize
+        Firstname Lastname, Student ID: \\[-3pt]      \normalsize
+        \today
+}
+
+
+\date{} % Print today's date
+\maketitle
+
+% Add content here
+\begin{abstract}
+A short paragraph (less than 200 words) highlighting the motivation, problem under study, and approaches used to investigate the problem.
+\end{abstract}
+
+\section{Introduction}
+\emph{Introduction} is the place you offer the readers a birds-eye view about your work. \emph{Introduction} is not just a description of the contents of each section. Briefly state the question under study (give details in Sec.~\ref{sec:main}), explain some of the reasons why it is a worthwhile question, and give an overview of your main results. It is also useful to highlight how the most recent research has addressed the problem and note similarities,
+differences, and/or limitations in methodology or findings that have drawn you to study or research the problem.
+
+\section{System Model}\label{sec:model}
+Clear describe the key elements in your system, e.g., the energy source, the number and type of relays (e.g., AF/DF), relevant settings and parameters (e.g., the battery size, energy conversion efficiency) and major assumptions made to facilitate your work (e.g., no pathloss, negligible signal processing power, etc). Notice that you do not need to show numbers. Rather, use variables to represent parameters (e.g., $M$ number of relays instead of 3
+relays, the transmission power $P$ instead of the transmission power $1$ W). Provide a diagram to illustrate your system model.
+
+\section{Define Section Title}\label{sec:main}
+Based on the system model defined in the previous section, start to describe your method to implement the system in details. You may need more than one sections to complete the description, and each section should focus on a specific topic. For example, use one section to describe the nature of the chosen energy source. Launch another section to elaborate how the relay/relays works/work to forward the source signal. Use mathematical equations to describe
+the received signals. A diagram showing the relay operation in the time domain should be useful.
+
+\section{Results and Discussions}\label{sec:results}
+First, give simulation/experiment configurations and common parameters. Divide this section into subsections according to the parameters subject to change or the performance metrics of interest. 
+\begin{itemize}
+\item Outage probability: Generally, outage probability refers to the likelihood that the end-to-end channel capacity is not enough to support the required transmission rate. Depending on your system model, the outage event might be defined in different ways. Hence it is necessary to explain how the
+outage event is defined in your work. 
+\item Throughput: Throughput is used to evaluate how much data can be sent successfully in a unit time and it may be computed as $(1-\text{outage probability})\cdot \text{transmission rate} \cdot \text{effective time used to complete one transmission}$. Refer to~\cite[Eq.~(14)]{Nasir2013}
+\end{itemize}
+
+\subsection{The Impact of XXX}
+Each subsection focuses on only one parameter, which should be stated in the beginning. Write in flow; connect subsections in a piece. It is important to direct readers to understand the curves. Simply reading the numbers does not help. Try to interpret your results, particularly the trend and implication. Refer to Fig.~\ref{fig:pout} to see how to insert two figures in a row.
+
+
+
+
+\begin{figure}[!t]
+\centering%
+ \subfigure[OR.]{\label{fig:pout_or_df_R-1}
+\includegraphics[width=0.48\columnwidth]{pout_or_df_R-1.eps}}
+\hfil \subfigure[Outage probabilities of OR and MRC with three
+relays.]{\label{fig:pout_or_df_R-1}
+\includegraphics[width=0.48\columnwidth]{pout_comparison_df_R-1.eps}}
+\caption{Comparisons of outage probabilities for different number of
+relays.} \label{fig:pout}
+\end{figure}
+
+\section{Summary}\label{sec:summary}
+Cover three things in this section: achievements, key results/findings, and what are left to future work. \emph{Summary} is not a duplicate of \emph{Abstract}. Use short, concise statements of the inferences that you have made because of your work. Draw meaning conclusions that should be directly related to the question raised in \emph{Introduction}.
+
+\bigskip\bigskip
+\noindent Additional notes
+\begin{itemize}[noitemsep]
+\item Title naming style: a statement consisting of the key words that best
+describes your work.
+\item Citation: show respects to others' contributions by proper citations. It is also important to indicate the information source you rely on to build up your work. 
+\item Length limit: 5 pages at most.
+\end{itemize}
+
+
+% Add reference here
+\bibliographystyle{IEEEtran}
+\begin{thebibliography}{99}
+
+\bibitem{Nasir2013}
+A.~A.~Nasir, X.~Zhou, S.~Durrani, and R.~A.~Kennedy, ``Relaying
+protocols for wireless energy harvesting and information
+processing,'' \emph{IEEE Trans. Wireless Commun.}, vol.~12 no.~7,
+pp.~1536-1276, July 2013.
+
+%\bibitem{tjmnames}
+%\url{http://ieeeauthorcenter.ieee.org/wp-content/uploads/Journal-Titles-and-Abbreviations.pdf}
+\end{thebibliography}
+
+%%% End document
+\end{document}
