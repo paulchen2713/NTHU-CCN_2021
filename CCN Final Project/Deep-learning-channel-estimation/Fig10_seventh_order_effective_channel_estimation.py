@@ -1,16 +1,16 @@
 # This Python script is used to generate Figure 10 in the paper:
 #
-#Özlem Tugfe Demir, Emil Bjornson, "Channel Estimation in Massive MIMO under Hardware
-#Non-Linearities: Bayesian Methods versus Deep Learning,"
-#IEEE Open Journal of the Communications Society, To appear.
+# Özlem Tugfe Demir, Emil Bjornson, "Channel Estimation in Massive MIMO under Hardware
+# Non-Linearities: Bayesian Methods versus Deep Learning,"
+# IEEE Open Journal of the Communications Society, To appear.
 #
-#Download article: https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=8933050
+# Download article: https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=8933050
 #
-#This is version 1.0 (Last edited: 2020-01-13)
+# This is version 1.0 (Last edited: 2020-01-13)
 #
-#License: This code is licensed under the GPLv2 license. If you in any way
-#use this code for research that results in publications, please cite our
-#paper as described above.
+# License: This code is licensed under the GPLv2 license. If you in any way
+# use this code for research that results in publications, please cite our
+# paper as described above.
 
 
 import numpy as np
